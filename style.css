@@ -1,19 +1,20 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 12px;
-    max-width: 960px;
+    max-width: 1500px;
     margin: auto;
 }
 bld{
     font-weight: 500;
+    font-size: larger;
 }
 
 h1 {
-    text-align: right;
+    text-align: center;
     font-size: 3.5em;
-    letter-spacing: .09em;
+    letter-spacing: .2em;
     padding-top: 1em;
-    padding-bottom: 1em;
+    padding-bottom: .5em;
 }
 
 h2 {
@@ -22,19 +23,10 @@ h2 {
 }
 
 h3 {
-    font-size: 0em;
-    padding-bottom: 5em;
-    color: black;
+    font-size: 2em;
 }
 h4{
     font-size: 2.5em;   
-}
-h5{
-    font-size: 1.5em;
-    padding-bottom: 1em;
-}
-h6{
-    font-size: 1em;
 }
 main { 
     display: grid;
@@ -42,18 +34,18 @@ main {
     margin-top: 2em;
     width: 90%;
     height: auto;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     position: relative;
 }
-
 header {
     text-align: center;
     margin: auto 2em;
 }
 
 section {
-    margin: auto 1em 4em 2em;
+    margin: auto 1em ;
+    padding-left: 1em;
 }
 
 i {
@@ -70,123 +62,106 @@ hr {
     height: 1px;
 }
 
-h1, h2, h3, h5 {
+h1, h2, h3 {
     font-weight: 100;
     margin-bottom: 0;
 }
 #mainLeft {
     border-right: 1px solid lightgray;
 }
-#timelineLeft {
-    border-right: 1px solid lightgray;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.container {
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0px 0;
-  background-color: rgb(255, 255, 255);
-}
 .timeline {
-  width: 80%;
-  height: auto;
-  max-width: 800px;
   margin: 0 auto;
-  position: relative;
+  max-width: 750px;
+  padding: 25px;
+  display: grid;
+  grid-template-columns: 1fr 3px 1fr;
+  font-family: "Fira Sans", sans-serif;
+  color: #ffffff;
 }
 
-.timeline ul {
-  list-style: none;
+.timeline__component {
+   margin: 0 20px 20px 20px;
 }
-.timeline ul li {
-  padding: 20px;
-  background-color: #1e1f22;
-  color: white;
+
+.timeline__component--bg {
+  padding: 1.5em;
+  background: rgb(0, 0, 0);
+  box-shadow: 0 0 5px rgba(116, 116, 116, 0.938);
   border-radius: 10px;
-  margin-bottom: 20px;
 }
-.timeline ul li:last-child {
+.timeline__component--bg--2 {
+  padding: 1.5em;
+  background: rgba(70, 70, 70, 0.719);
+  box-shadow: 0 0 5px rgb(0, 0, 0);
+  border-radius: 10px;
+}
+/* LEAVE TILL LAST */
+.timeline__component--bottom {
   margin-bottom: 0;
 }
-.timeline-content h1 {
-  font-weight: 500;
-  font-size: 25px;
-  line-height: 30px;
-  margin-bottom: 10px;
+
+.timeline__middle {
+  position: relative;
+  background: #000000;
 }
-.timeline-content p {
-  font-size: 16px;
-  line-height: 30px;
-  font-weight: 300;
+
+.timeline__point {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 15px;
+  background: #000000;
+  border-radius: 50%;
 }
-.timeline-content .date {
-  font-size: 18px;
-  font-weight: 700;
-  color: white;
-}  
 
-@media only screen and (min-width: 768px) {
-    .timeline:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 2px;
-      height: 100%;
-      background-color: rgb(0, 0, 0);
-    }
-  .timeline ul li {
-    width: 50%;
-    position: relative;
-    margin-bottom: 50px;
-  }
-  .timeline ul li:nth-child(odd) {
-    float: left;
-    clear: right;
-    transform: translateX(-30px);
-    border-radius: 20px 0px 20px 20px;
-  }
-  .timeline ul li:nth-child(even) {
-    float: right;
-    clear: left;
-    transform: translateX(30px);
-    border-radius: 0px 20px 20px 20px;
-  }
-  .timeline ul li::before {
-    content: "";
-    position: absolute;
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
-    background-color: black;
-    top: 0px;
-  }
-  .timeline ul li:nth-child(odd)::before {
-    transform: translate(50%, -50%);
-    right: -30px;
-  }
-  .timeline ul li:nth-child(even)::before {
-    transform: translate(-50%, -50%);
-    left: -30px;
-  }
+/* LEAVE TILL LAST */
+.timeline__point--bottom {
+  top: initial;
+  bottom: 0;
+}
 
-  .timeline-content .date {
-    position: absolute;
-    top: -30px;
-    color:black;
-  }
+.timeline__date{
+  font-size: 20px;
+  font-weight: bolder;
+  color:black
+}
 
-  .timeline ul li:hover::before {
-    background-color: aqua;
-  }
+.timeline__date--left {
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: right;
+  color:black
+}
+.tab { text-indent:40px }
+.timeline__title {
+  margin: 0;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.timeline__title--big {
+  margin: 0;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+.timeline__paragraph {
+  text-align: start;
+  line-height: 1.3em;
+  margin-top: 1em;
+}
+.timeline__skills {
+  text-align: right;
+  line-height: 1em;
+  margin-top: 1.5em;
+  margin-bottom: .5em;
+  font-size: smaller;
+  font-weight: light;
+  font-style: italic ;
+}
+.timeline__points {
+  margin-top: 5px;
+  text-align: right;
+  font-size: smaller;
+  font-weight: lighter;
 }
