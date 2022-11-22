@@ -104,7 +104,7 @@ h1, h2, h3 {
 .timeline__component--bg {
   padding: 1.5em;
   background: rgb(0, 0, 0);
-  box-shadow: 0 0 5px rgba(116, 116, 116, 0.938);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.938);
   border-radius: 10px;
 }
 .timeline__component--bg--grey {
@@ -156,7 +156,7 @@ h1, h2, h3 {
 }
 .timeline__title {
   margin: 0;
-  font-size: 1.3em;
+  font-size: 1.5em;
   font-weight: bold;
 }
 .timeline__title--big {
